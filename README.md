@@ -50,15 +50,3 @@ source .venv/bin/activate
 ```bash
 python main.py
 ```
-
-### Project Structure
-
-py-first/
-│
-├── main.py
-├── README.md
-├── pyproject.toml
-├── uv.lock
-├── .gitignore
-├── .uvlock
-
