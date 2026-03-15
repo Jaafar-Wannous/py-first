@@ -1,4 +1,8 @@
-import requests
+from fastapi import FastAPI
 
-response = requests.get("https://www.google.com")
-print("Status Code:", response.status_code)
+app = FastAPI()
+
+
+@app.get("/health")
+def health():
+    return {"status": "Ok"}
