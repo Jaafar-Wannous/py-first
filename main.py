@@ -1,6 +1,9 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 import requests
+from langsmith import traceable
+from dotenv import load_dotenv
+load_dotenv()
 
 app = FastAPI()
 
@@ -15,6 +18,7 @@ def health():
 
 
 @app.post("/chat")
+@traceable(name="chat-endpoint")
 def chat(request: ChatRequest):
 
     response = requests.post(
